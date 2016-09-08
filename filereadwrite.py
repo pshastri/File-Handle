@@ -3,11 +3,18 @@ import os
 import re
 
 myFile=open("C:\\Users\\pshastri\\Desktop\\test.txt",'r')
+mynewFile=open("C:\\Users\\pshastri\\Desktop\\newtest.txt",'w+')
 myFilecont=myFile.read()
+
 myFilecont=re.split('\s',myFilecont)
 
-#print myFilecont
+
 myWord="cloud"
-for line in myFilecont:
+for line_no,line in enumerate(myFilecont,0):
+
+	
+	mynewFile.write(line+"\n")
 	if myWord.lower()==line.lower():
-		print "Found"
+		
+		mynewFile.write("is the next thing\n")
+	
